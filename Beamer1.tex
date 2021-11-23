@@ -1,0 +1,196 @@
+\documentclass{beamer}
+\usepackage{listings}
+\lstset{
+%language=C,
+frame=single, 
+breaklines=true,
+columns=fullflexible
+}
+\usepackage{subcaption}
+\usepackage{setspace}
+\usepackage{url}
+\usepackage{tikz}
+\usepackage{tkz-euclide} % loads  TikZ and tkz-base
+%\usetkzobj{all}
+\usepackage[utf8]{inputenc}
+\usepackage{longtable}
+\usetikzlibrary{calc,math}
+\usepackage{float}
+\usetheme{Berlin}
+\usepackage{graphicx}
+\usecolortheme{beaver}
+
+
+\newcommand\norm[1]{\left\lVert#1\right\rVert}
+\renewcommand{\vec}[1]{\mathbf{#1}}
+\usepackage[export]{adjustbox}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+%\usetheme{Boadilla}
+\newcommand\mytextbullet{\leavevmode%
+\usebeamertemplate{itemize item}\hspace{.5em}}
+
+\bibliographystyle{IEEEtran}
+
+\usepackage{color}
+
+\title{Connecting Dory (Receiver) to Raspberry Pi 4}
+\author{B603 Lab}
+%{\and} \\
+%\vspace{10pt}
+%{Supervisor:} \\
+%{Dr. GVV Sharma} }
+
+\institute{Indian Institute of Technology, Hyderabad.}
+\date{\today}
+
+\begin{document}
+
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\section{Step 1}
+\begin{frame}
+\frametitle{Step 1}
+\begin{columns}
+\column{1\textwidth}
+  \begin{enumerate}
+  \item Install PuTTY: \\sudo apt-get install -y putty\\
+  \vspace{10pt}
+  \item Open Putty from the terminal using the command: putty
+  
+  \end{enumerate}
+\end{columns}
+
+\end{frame}
+
+\section{Step 2}
+\begin{frame}
+\frametitle{Step 2}
+\begin{columns}
+\column{1\textwidth}
+Open a terminal on RPi4 and type the command:
+  \begin{itemize}
+  \item  lsusb -t
+  \vspace{10pt}
+  \item dmesg $|$ grep tty  (From here check the Rx Dory is connected to which port of RPi 4)
+  \vspace{10pt}
+  \item lsusb /dev/tty* (Checking all the ports)
+  
+  \end{itemize}
+\end{columns}
+%\vspace{25px}
+
+
+
+\end{frame}
+
+\section{Step 3}
+\begin{frame}
+\frametitle{Step 3}
+\begin{columns}
+\column{1\textwidth}
+In the PuTTy configuration,
+  \begin{itemize}
+  \item  Select the ‘Serial’ option.
+  \vspace{10pt}
+  \item Baud rate/speed = 115200.
+  \vspace{10pt}
+  \item Open.
+  
+  \end{itemize}
+  
+\end{columns}
+%\vspace{25px}
+
+
+
+\end{frame}
+
+\section{Step 3}
+\begin{frame}
+\frametitle{Step 3}
+\begin{columns}
+\column{1\textwidth}
+
+  \begin{figure}[h!]
+  \centering
+  \begin{subfigure}[b]{0.5\linewidth}
+    \includegraphics[width=\linewidth]{./figs/5.png}
+%    \caption{Coffee.}
+  \end{subfigure}
+
+  \caption{PUTTY Configuration}
+%  \label{fig:axis}
+\end{figure}
+\end{columns}
+%\vspace{25px}
+
+
+
+\end{frame}
+
+\section{Step 4}
+\begin{frame}
+\frametitle{Step 4}
+\begin{columns}
+\column{1\textwidth}
+
+  \begin{itemize}
+  \item  Make the transmitter Dory in ‘Fly’ mode.
+  
+  
+  \end{itemize}
+  \begin{figure}[h!]
+  \centering
+  \begin{subfigure}[b]{0.75\linewidth}
+    \includegraphics[width=\linewidth]{./figs/2.png}
+%    \caption{Coffee.}
+  \end{subfigure}
+
+  \caption{Serial Output of PUTTY for Rx. DORY}
+%  \label{fig:axis}
+\end{figure}
+  
+\end{columns}
+%\vspace{25px}
+
+
+
+\end{frame}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
+
